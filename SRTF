@@ -56,7 +56,6 @@ Shrestha Manori 2018746 D
  is_complete[idx]=1;
  complete++;
  }
-Shrestha Manori 2018746 D
  }
  else
  curr_time++;
