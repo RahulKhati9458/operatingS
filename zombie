@@ -1,0 +1,26 @@
+Problem Statement: Write a Program to implement Zombie process.
+Overview: In the zombie process when i run fork() function first it will
+run parent id after that i give a sleep function in that sleep time program
+will go to run child and in child I print parent id using getppid() function
+after 5sec of sleep parent id will be printed and we clearly see that both
+parent id will be same.
+• C-Program:
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+printf("Zombie Process..\n\n");
+int x=fork();
+if(x==0)
+{
+printf("Child \n");
+printf("Child process id: %d\n",getpid());
+printf("Child process show (Parent id): %d\n", getppid());
+}
+else
+{
+printf("parent \n");
+sleep(5);
+printf("Parent process id: %d\n",getpid());
+}
+}
