@@ -1,0 +1,27 @@
+Problem Statement: Write a Program to implement Orphan process.
+Overview: In the Orphan process when i run fork() function first it will
+run parent id after that it will run again fork() and run child id and then it
+will go sleep then our code will be terminated for some time but at the
+back-end it will run and after 5sec our code run again and print child id
+and parent id but in this orphan process the parent id will be different in
+both the cases.
+• C-Program:
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+printf("orphan process..\n\n");
+int x=fork();
+if(x==0)
+{
+printf("Child \n");
+sleep(5);
+printf("Child process id: %d\n",getpid());
+printf("Child process show (Parent id): %d\n", getppid());
+}
+else
+{
+printf("parent \n");
+printf("Parent process id: %d\n",getpid());
+}
+}
